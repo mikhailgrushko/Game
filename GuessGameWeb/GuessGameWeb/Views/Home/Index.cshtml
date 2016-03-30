@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html ng-app="playersApp" ng-controller="playersController as vm">
+<head>
+	<title ng-bind="vm.helloAngular"></title>
+
+	<link href="~/Content/bootstrap.css" rel="stylesheet" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+
+	<script>
+		var playersController = function ($scope, $http) {
+			var vm = this;
+			vm.players = [];
+			vm.newName = "someName";
+			vm.newType = 1;
+
+			vm.canStartGame = false;
+
+			vm.addPlayer = addPlayer;
+			vm.deletePlayer = deletePlayer;
+			vm.startGame = startGame;
+
+			vm.GameResult;
+			vm.GameIsOver = false;
+			vm.getTypeLabel = getTypeLabel;
+
+			function addPlayer() {
+				if (vm.newType == undefined) {
+					return;
+				}
+				
+				var player = { Name: vm.newName, PlayerType: vm.newType }
+				vm.newName = "someName";
+				vm.newType = 1;
+
+				vm.players.push(player);
+
+				vm.canStartGame = vm.players.length >= 2 && vm.players.length <= 8;
+			}
+			function deletePlayer(player)
+			{
+				var index = vm.players.indexOf(player);
+				vm.players.splice(index, 1);
+			}
+
+			function startGame(url)
+			{
+				$http({
+					method: 'POST',
+					url: url,
+					data: vm.players
+				}).then(function successCallback(response) {
+
+					vm.GameIsOver = true;
+					vm.GameResult = response.data;
+
+				}, function errorCallback(response) {
+				});
+			}
+			function canStartGame() {
+				var result = vm.players.length > 2 && vm.players.length < 8;
+				return result;
+			}
+
+			function getTypeLabel(typeId)
+			{
+				var typeIdNum = parseInt(typeId, 10);
+
+				switch (typeIdNum) {
+					case 1:
+						return "Random";
+						break;
+					case 2:
+						return "Memory";
+						break;
+					case 3:
+						return "Thorough";
+						break;
+					case 4:
+						return "Cheater";
+						break;
+					case 5:
+						return "ThoroughCheater";
+						break;
+				}
+			}
+		}
+
+		playersController.$inject = ['$scope', '$http'];
+
+		var playersApp = angular.module('playersApp', []);
+
+		playersApp.controller('playersController', playersController);
+	</script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-8">
+			<section id="loginForm">
+				<table id="playersTbl" class="table">
+					<tr>
+						<td>Name</td>
+						<td>Type</td>
+						<td></td>
+					</tr>
+					<tr ng-repeat="item in vm.players">
+						<td>{{ item.Name}}</td>
+						<td> {{vm.getTypeLabel(item.PlayerType)}}</td>
+						<td>
+							<input class="btn btn-default" type="button" value="Delete" ng-click="vm.deletePlayer(item)">
+						</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+		<div class="col-md-4">
+			<section id="socialLoginForm">
+				<div class="form-group">
+					@Html.Label("Name", new { @class = "col-md-2 control-label" })
+					<div class="col-md-10">
+						<input type="text" class="form-control" ng-model="vm.newName" />
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.Label("Type", new { @class = "col-md-2 control-label" })
+					<div class="col-md-10">
+						<select id="Eventtyp" class="form-control" ng-model="vm.newType">
+							<option value="1" selected="selected">Random</option>
+							<option value="2">Memory</option>
+							<option value="3">Thorough</option>
+							<option value="4">Cheater</option>
+							<option value="5">ThoroughCheater</option>
+						</select>
+					</div>
+				</div>
+
+				<br />
+				<input class="btn btn-default" type="button" value="Input" ng-click="vm.addPlayer()">
+			</section>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<input ng-disabled="!vm.canStartGame" class="btn btn-default" type="button" value="Start Game" data-request-url="@Url.Action("StartGame", "Home")" ng-click="vm.startGame('@Url.Action("StartGame", "Home")')">
+	</div>
+
+	<div class="row" ng-show="vm.GameIsOver">
+		<h2>Game is over</h2>
+		
+		<div class="form-group">
+			<label class="col-md-2 control-label">RealWeight</label>
+			<div class="col-md-10">
+				<input type="text" class="form-control" ng-model="vm.GameResult.RealWeight" />
+			</div>
+		</div>
+
+		<div class="form-group" ng-show="vm.GameResult.WinnerName !== null">
+			<label class="col-md-2 control-label">Winner name</label>
+			<div class="col-md-10">
+				<input type="text" class="form-control" ng-model="vm.GameResult.WinnerName" />
+			</div>
+		</div>
+		<div class="form-group" ng-show="vm.GameResult.WinnerName == null">
+			<label class="col-md-2 control-label">Closest player</label>
+			<div class="col-md-10">
+				<input type="text" class="form-control" ng-model="vm.GameResult.Clossest.Name" />
+			</div>
+		</div>
+		<div class="form-group" ng-show="vm.GameResult.WinnerName == null">
+			<label class="col-md-2 control-label">Closest player guess</label>
+			<div class="col-md-10">
+				<input type="text" class="form-control" ng-model="vm.GameResult.Clossest.Guess" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>

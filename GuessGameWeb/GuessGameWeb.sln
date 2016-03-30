@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessGameWeb", "GuessGameWeb\GuessGameWeb.csproj", "{A9E0AEFC-0ADA-48D6-98ED-94732296AC4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessWeightGame", "GuessWeightGame\GuessWeightGame.csproj", "{DCAF8847-00D2-4796-9FC6-747C79782C4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessWightGame.Core", "GuessWightGame.Core\GuessWightGame.Core.csproj", "{F012642B-3577-4ECF-B28A-8DC577EF7F55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9E0AEFC-0ADA-48D6-98ED-94732296AC4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E0AEFC-0ADA-48D6-98ED-94732296AC4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E0AEFC-0ADA-48D6-98ED-94732296AC4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E0AEFC-0ADA-48D6-98ED-94732296AC4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCAF8847-00D2-4796-9FC6-747C79782C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCAF8847-00D2-4796-9FC6-747C79782C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCAF8847-00D2-4796-9FC6-747C79782C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCAF8847-00D2-4796-9FC6-747C79782C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F012642B-3577-4ECF-B28A-8DC577EF7F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F012642B-3577-4ECF-B28A-8DC577EF7F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F012642B-3577-4ECF-B28A-8DC577EF7F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F012642B-3577-4ECF-B28A-8DC577EF7F55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

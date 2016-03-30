@@ -1,0 +1,10 @@
+H:\Projects\test_1\GuessWeightGame\GuessWeightGame\GuessWightGame.Core\bin\Debug\GuessWightGame.Core.dll
+H:\Projects\test_1\GuessWeightGame\GuessWeightGame\GuessWightGame.Core\bin\Debug\GuessWightGame.Core.pdb
+H:\Projects\test_1\GuessWeightGame\GuessWeightGame\GuessWightGame.Core\obj\Debug\GuessWightGame.Core.dll
+H:\Projects\test_1\GuessWeightGame\GuessWeightGame\GuessWightGame.Core\obj\Debug\GuessWightGame.Core.pdb
+H:\Projects\test_1\GuessWeightGame\GuessWeightGame\GuessWightGame.Core\obj\Debug\GuessWightGame.Core.csprojResolveAssemblyReference.cache
+H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWightGame.Core\bin\Debug\GuessWightGame.Core.dll
+H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWightGame.Core\bin\Debug\GuessWightGame.Core.pdb
+H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWightGame.Core\obj\Debug\GuessWightGame.Core.csprojResolveAssemblyReference.cache
+H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWightGame.Core\obj\Debug\GuessWightGame.Core.dll
+H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWightGame.Core\obj\Debug\GuessWightGame.Core.pdb
