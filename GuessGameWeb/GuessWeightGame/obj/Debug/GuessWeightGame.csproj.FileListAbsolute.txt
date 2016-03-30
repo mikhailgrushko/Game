@@ -14,3 +14,11 @@ H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWeightGame\bin\Debug\GuessW
 H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWeightGame\obj\Debug\GuessWeightGame.csprojResolveAssemblyReference.cache
 H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWeightGame\obj\Debug\GuessWeightGame.exe
 H:\Projects\test_1\GuessWeightGame\GuessGameWeb\GuessWeightGame\obj\Debug\GuessWeightGame.pdb
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\bin\Debug\GuessWeightGame.exe.config
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\bin\Debug\GuessWeightGame.exe
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\bin\Debug\GuessWeightGame.pdb
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\bin\Debug\GuessWightGame.Core.dll
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\bin\Debug\GuessWightGame.Core.pdb
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\obj\Debug\GuessWeightGame.csprojResolveAssemblyReference.cache
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\obj\Debug\GuessWeightGame.exe
+H:\Projects\test_1\GuessWeightGame\Game\GuessGameWeb\GuessWeightGame\obj\Debug\GuessWeightGame.pdb

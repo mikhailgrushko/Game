@@ -11,5 +11,6 @@ namespace GuessWightGame.Core
 		public static int MaxAttempts = 100;
 		public static int MinWeught = 40;
 		public static int MaxWeight = 140;
+		public static int TimeForGame = 1500;
 	}
 }

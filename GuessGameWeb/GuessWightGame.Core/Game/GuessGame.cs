@@ -19,8 +19,11 @@ namespace GuessWightGame.Core.Game
 			NumberToGuess = RandomHelper.GetRandom();
 			_logger.LogMessage("Number to Guess - " + NumberToGuess);
 			GuessedNumbers = new List<int>();
+			TimeForGame = Global.TimeForGame;
 		}
 
+		private static DateTime GameStarted { get; set; }
+		private static int TimeForGame { get; set; }
 		public int NumberToGuess { get; set; }
 
 		public List<BasePlayer> Players { get; set; }
@@ -29,9 +32,11 @@ namespace GuessWightGame.Core.Game
 
 		private static bool _isGuessed;
 		private static bool _isGameEnded;
+		public static bool _isTimeEnded;
 		private static bool Exit()
 		{
-			return (_isGuessed || _isGameEnded);
+			_isTimeEnded = (DateTime.Now > GameStarted.AddMilliseconds(TimeForGame));
+			return (_isGuessed || _isGameEnded || _isTimeEnded);
 		}
 
 		public static List<int> GuessedNumbers { get; set; }
@@ -70,6 +75,8 @@ namespace GuessWightGame.Core.Game
 
 		public GameResult Start()
 		{
+			GameStarted = DateTime.Now;
+
 			while (!Exit())
 			{
 				foreach (var player in Players)
